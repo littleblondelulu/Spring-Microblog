@@ -15,7 +15,7 @@
 {{#name}}
 <form action="/add-message" method="post">
     <input type="text" placeholder="Enter your message" name="addMessage"/>
-    <input type="Submit"/>
+    <button type="submit">Submit</button>
 </form>
 
 Messages by {{.}}:
@@ -28,7 +28,7 @@ Messages by {{.}}:
 
 <form action="/delete-message" method="post">
     <input type="text" placeholder="ID to delete" name="deleteMessage"/>
-    <input type="submit"/>
+    <button type="submit">Delete</button>
 </form>
 {{/name}}
 

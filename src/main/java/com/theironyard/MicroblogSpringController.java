@@ -31,8 +31,9 @@ public class MicroblogSpringController {
     }
 
     @RequestMapping(path = "/add-message", method = RequestMethod.POST)
-    public String newMessage(HttpSession session, String userName, String addMessage) {
-        session.setAttribute("userName", userName);
+    public String newMessage(HttpSession session, String addMessage) {
+
+//        session.setAttribute("userName", userName);
 
         Message message = new Message(addMessage);
         messages.add(message);
