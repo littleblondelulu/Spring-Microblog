@@ -5,14 +5,20 @@
     <title>Title</title>
 </head>
 <body>
-
-{{#name}}Messages by {{.}}!
+{{^name}}
+<form action="/login" method="post">
+    <input type="text" placeholder="Enter your name" name="userName"/>
+    <button type="submit">Login</button>
+</form>
 {{/name}}
 
+{{#name}}
 <form action="/add-message" method="post">
     <input type="text" placeholder="Enter your message" name="addMessage"/>
     <input type="Submit"/>
 </form>
+
+Messages by {{.}}:
 
 <ul>
     {{#messages}}
@@ -24,7 +30,7 @@
     <input type="text" placeholder="ID to delete" name="deleteMessage"/>
     <input type="submit"/>
 </form>
-
+{{/name}}
 
 </body>
 </html>

@@ -20,6 +20,7 @@ public class MicroblogSpringController {
     @RequestMapping(path = "/", method = RequestMethod.GET)
     public String home(Model model, HttpSession session) {
         model.addAttribute("name", session.getAttribute("userName"));
+        model.addAttribute("messages", session.getAttribute("messages"));
         return "home";
     }
 
@@ -35,6 +36,8 @@ public class MicroblogSpringController {
 
         Message message = new Message(addMessage);
         messages.add(message);
+
+        session.setAttribute("messages", messages);
 
         return "redirect:/";
     }
