@@ -20,11 +20,11 @@
 
 Messages by {{.}}:
 
-<ul>
+<ol>
     {{#messages}}
     <li>{{text}}</li>
     {{/messages}}
-</ul>
+</ol>
 
 <form action="/delete-message" method="post">
     <input type="text" placeholder="ID to delete" name="deleteMessage"/>
